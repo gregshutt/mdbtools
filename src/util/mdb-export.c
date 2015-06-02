@@ -25,7 +25,8 @@
 #undef MDB_BIND_SIZE
 #define MDB_BIND_SIZE 200000
 
-#define is_quote_type(x) (x==MDB_TEXT || x==MDB_OLE || x==MDB_MEMO || x==MDB_DATETIME || x==MDB_BINARY || x==MDB_REPID)
+// adding MDB_BOOL type to quotes so psql will run conversion code
+#define is_quote_type(x) (x==MDB_TEXT || x==MDB_OLE || x==MDB_MEMO || x==MDB_DATETIME || x==MDB_BINARY || x==MDB_REPID || x==MDB_BOOL)
 #define is_binary_type(x) (x==MDB_OLE || x==MDB_BINARY || x==MDB_REPID)
 
 static char *escapes(char *s);
